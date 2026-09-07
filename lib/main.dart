@@ -263,24 +263,24 @@ class _PinPageState extends State<PinPage> {
           Container(
             width: double.infinity,
             color: kRed,
-            padding: const EdgeInsets.only(top: 40, bottom: 32),
+            padding: const EdgeInsets.only(top: 48, bottom: 40),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // Language switcher — top left
                 Padding(
-                  padding: const EdgeInsets.only(left: 16, bottom: 16),
+                  padding: const EdgeInsets.only(left: 16, bottom: 20),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: const [
-                      Icon(Icons.language, color: Colors.white, size: 16),
-                      SizedBox(width: 4),
+                      Icon(Icons.language, color: Colors.white, size: 18),
+                      SizedBox(width: 5),
                       Text(
-                        'English',
-                        style: TextStyle(color: Colors.white, fontSize: 12),
+                        'ENGLISH',
+                        style: TextStyle(color: Colors.white, fontSize: 14),
                       ),
-                      SizedBox(width: 2),
-                      Icon(Icons.keyboard_arrow_down, color: Colors.white, size: 16),
+                      SizedBox(width: 3),
+                      Icon(Icons.keyboard_arrow_down, color: Colors.white, size: 18),
                     ],
                   ),
                 ),
@@ -295,22 +295,22 @@ class _PinPageState extends State<PinPage> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Text(
-                            'M',
+                            'm',
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: 26,
+                              fontSize: 36,
                               fontWeight: FontWeight.bold,
                               letterSpacing: 2,
                             ),
                           ),
-                          SizedBox(width: 2),
-                          Icon(Iconsax.mobile, color: Colors.white, size: 18),
-                          SizedBox(width: 2),
+                          SizedBox(width: 3),
+                          Icon(Iconsax.mobile, color: Colors.white, size: 24),
+                          SizedBox(width: 3),
                           Text(
-                            'PESA',
+                            'pesa',
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: 26,
+                              fontSize: 36,
                               fontWeight: FontWeight.bold,
                               letterSpacing: 2,
                             ),
@@ -321,14 +321,14 @@ class _PinPageState extends State<PinPage> {
                         'ለሁሉም',
                         style: GoogleFonts.notoSansEthiopic(
                           color: Colors.white70,
-                          fontSize: 8,
+                          fontSize: 10,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                     ],
                   ),
                 ),
-                const SizedBox(height: 24),
+                const SizedBox(height: 28),
                 // Profile row
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -336,34 +336,34 @@ class _PinPageState extends State<PinPage> {
                     Container(
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        border: Border.all(color: Colors.white, width: 2),
+                        border: Border.all(color: Colors.white, width: 2.5),
                       ),
                       child: CircleAvatar(
-                        radius: 32,
+                        radius: 40,
                         backgroundImage: AssetImage('assets/zemedkun.jpeg'),
                       ),
                     ),
-                    const SizedBox(width: 14),
+                    const SizedBox(width: 18),
                     const Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           'Welcome Back',
-                          style: TextStyle(fontSize: 13, color: Colors.white70),
+                          style: TextStyle(fontSize: 15, color: Colors.white70),
                         ),
-                        SizedBox(height: 4),
+                        SizedBox(height: 6),
                         Text(
                           'Zemedkun Kidane',
                           style: TextStyle(
-                            fontSize: 17,
+                            fontSize: 20,
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
                           ),
                         ),
-                        SizedBox(height: 4),
+                        SizedBox(height: 6),
                         Text(
                           '+251711234577',
-                          style: TextStyle(fontSize: 13, color: Colors.white70),
+                          style: TextStyle(fontSize: 15, color: Colors.white70),
                         ),
                       ],
                     ),
@@ -385,7 +385,7 @@ class _PinPageState extends State<PinPage> {
                 'ENTER YOUR M-PESA PIN',
                 style: TextStyle(
                   fontSize: 13,
-                  fontWeight: FontWeight.normal,
+                  fontWeight: FontWeight.bold,
                   color: Colors.black87,
                   letterSpacing: 0.5,
                 ),

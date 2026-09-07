@@ -37,7 +37,7 @@ class HomePage extends StatelessWidget {
                     ),
                     child: Center(
                       child: Text(
-                        user.initials,
+                        'AM',
                         style: const TextStyle(
                           color: Colors.black87,
                           fontWeight: FontWeight.bold,
@@ -167,20 +167,12 @@ class HomePage extends StatelessWidget {
                     ),
                     const SizedBox(height: 10),
                     Text(
-                      user.formattedBalance,
-                      style: const TextStyle(
+                      '* * * * * * * *',
+                      style: TextStyle(
                         color: Colors.white,
                         fontSize: 20,
-                        letterSpacing: 1,
+                        letterSpacing: 3,
                         fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    const SizedBox(height: 4),
-                    Text(
-                      user.phoneNumber,
-                      style: const TextStyle(
-                        color: Colors.white70,
-                        fontSize: 12,
                       ),
                     ),
                   ],
@@ -376,7 +368,7 @@ class HomePage extends StatelessWidget {
           // Transaction 1 — CBE / Aster Merchant
           _txItem(
             iconBg: const Color(0xFF1565C0),
-            iconLabel: 'CBE',
+            icon: Icons.account_balance,
             name: 'Aster Merchant',
             sub: 'Bank',
             amount: '+234,500',
@@ -388,7 +380,7 @@ class HomePage extends StatelessWidget {
           // Transaction 2 — M-PESA / Henok Chala
           _txItem(
             iconBg: kRed,
-            iconLabel: 'MP',
+            icon: Icons.phone_android,
             name: 'Henok Chala',
             sub: 'Airtime',
             amount: '-1,000.00',
@@ -400,7 +392,7 @@ class HomePage extends StatelessWidget {
           // Transaction 3 — M-PESA / Henok Chala
           _txItem(
             iconBg: kRed,
-            iconLabel: 'MP',
+            icon: Icons.phone_android,
             name: 'Henok Chala',
             sub: 'M-PESA',
             amount: '-100',
@@ -414,7 +406,7 @@ class HomePage extends StatelessWidget {
 
   Widget _txItem({
     required Color iconBg,
-    required String iconLabel,
+    required IconData icon,
     required String name,
     required String sub,
     required String amount,
@@ -427,19 +419,8 @@ class HomePage extends StatelessWidget {
         Container(
           width: 40,
           height: 40,
-          decoration: BoxDecoration(
-            color: iconBg,
-            shape: BoxShape.circle,
-          ),
           child: Center(
-            child: Text(
-              iconLabel,
-              style: const TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                fontSize: 11,
-              ),
-            ),
+            child: Icon(icon, color: iconBg, size: 28),
           ),
         ),
         const SizedBox(width: 12),

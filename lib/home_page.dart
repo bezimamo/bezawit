@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
+import 'models/login_response.dart';
 
 const Color kRed = Color(0xFFD90000);
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  final UserModel user;
+
+  const HomePage({super.key, required this.user});
 
   @override
   Widget build(BuildContext context) {
@@ -31,10 +35,10 @@ class HomePage extends StatelessWidget {
                         ),
                       ],
                     ),
-                    child: const Center(
+                    child: Center(
                       child: Text(
-                        'AM',
-                        style: TextStyle(
+                        user.initials,
+                        style: const TextStyle(
                           color: Colors.black87,
                           fontWeight: FontWeight.bold,
                           fontSize: 14,
@@ -43,10 +47,10 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(width: 10),
-                  const Expanded(
+                  Expanded(
                     child: Row(
                       children: [
-                        Text(
+                        const Text(
                           'Good Morning,',
                           style: TextStyle(
                             fontSize: 15,
@@ -54,17 +58,20 @@ class HomePage extends StatelessWidget {
                             color: Colors.black87,
                           ),
                         ),
-                        SizedBox(width: 6),
-                        Text(
-                          'Aster',
-                          style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.black87,
+                        const SizedBox(width: 6),
+                        Flexible(
+                          child: Text(
+                            user.name.split(' ').first,
+                            overflow: TextOverflow.ellipsis,
+                            style: const TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.black87,
+                            ),
                           ),
                         ),
-                        SizedBox(width: 4),
-                        Text('👋', style: TextStyle(fontSize: 16)),
+                        const SizedBox(width: 4),
+                        const Text('👋', style: TextStyle(fontSize: 16)),
                       ],
                     ),
                   ),
@@ -159,13 +166,21 @@ class HomePage extends StatelessWidget {
                       style: TextStyle(color: Colors.white70, fontSize: 14),
                     ),
                     const SizedBox(height: 10),
-                    const Text(
-                      '* * * * * * * *',
-                      style: TextStyle(
+                    Text(
+                      user.formattedBalance,
+                      style: const TextStyle(
                         color: Colors.white,
-                        fontSize: 22,
-                        letterSpacing: 4,
+                        fontSize: 20,
+                        letterSpacing: 1,
                         fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      user.phoneNumber,
+                      style: const TextStyle(
+                        color: Colors.white70,
+                        fontSize: 12,
                       ),
                     ),
                   ],
@@ -264,12 +279,12 @@ class HomePage extends StatelessWidget {
   // ── Services Card ──────────────────────────────────────────────────────────
   Widget _buildServicesCard() {
     final services = [
-      {'icon': Icons.store_outlined, 'label': 'Merchant\nPayment'},
-      {'icon': Icons.receipt_long_outlined, 'label': 'Bill\nPayment'},
-      {'icon': Icons.savings_outlined, 'label': 'Credit &\nSaving'},
-      {'icon': Icons.send_outlined, 'label': 'Transfer\nMoney'},
-      {'icon': Icons.phone_android_outlined, 'label': 'Airtime/\nPackage'},
-      {'icon': Icons.more_horiz, 'label': 'More\nServices'},
+      {'icon': Iconsax.shop, 'label': 'Merchant\nPayment'},
+      {'icon': Iconsax.receipt_2, 'label': 'Bill\nPayment'},
+      {'icon': Iconsax.medal_star, 'label': 'Credit &\nSaving'},
+      {'icon': Iconsax.send_2, 'label': 'Transfer\nMoney'},
+      {'icon': Iconsax.mobile, 'label': 'Airtime/\nPackage'},
+      {'icon': Iconsax.more_circle, 'label': 'More\nServices'},
     ];
 
     Widget item(Map s) => Expanded(
